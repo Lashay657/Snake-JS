@@ -257,3 +257,21 @@ function togglepause() {
 		pause();
 	}
 }
+
+function resizegame() {
+	canvas.width = window.innerWidth - 2;
+	canvas.height = window.innerHeight - 2;
+
+	gw = Math.floor(canvas.width / ts);
+	gh = Math.floor(canvas.height / ts);
+
+	canvas.width -= canvas.width - (gw * ts);
+	canvas.height -= canvas.height - (gh * ts);
+
+	if (ax >= gw) {
+		ax = Math.floor(Math.random() * gw);
+	}
+	if (ay >= gh) {
+		ay = Math.floor(Math.random() * gh);
+	}
+}
